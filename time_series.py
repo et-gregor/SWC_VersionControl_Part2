@@ -1,6 +1,7 @@
 class TimeSeries(object):
-	"""Basic TimeSeries class"""
-#Can't be asked...
+    """Basic TimeSeries class
+    
+    Takes a tuple of (x,y) values as data"""
     def __init__(self, data):
         self.data = data
     
@@ -12,6 +13,7 @@ class TimeSeries(object):
         raise Exception("Didn't find the value")
     
     def view(self):
+        '''A method for viewing the data in the TimeSeries object'''
         pass
     
 class StepFunctionTimeSeries(TimeSeries):
@@ -31,7 +33,6 @@ class LinearTimeSeries(TimeSeries):
 	"""Linear interpolation between values"""
     def __init__(self, data):
         TimeSeries.__init__(self, data)
-#Bla bla bla blah di blabla
         self.data.sort()
 
     def get(self, x):
